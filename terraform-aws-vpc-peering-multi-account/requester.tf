@@ -166,3 +166,4 @@ output "requester_connection_id" {
 output "requester_accept_status" {
     value = join("", aws_vpc_peering_connection.requester.*.accept_status)
     description = "Requester VPC peering connection request status"
+}

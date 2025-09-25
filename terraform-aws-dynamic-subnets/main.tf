@@ -264,3 +264,7 @@ named_private_route_table_ids_map = { f for i, s in var. subnets_per_az_names : 
     compact([for k, v in local az_private_route_table_ids_map : try(v[i], "*)]))
 }
 
+named_public_route_table_ids_map = { for i, s in var.subnets_per_az_names : s => ()
+    compact([for k, v in local.az_public_route_table_ids_map : try(v[i], "")])) 
+}
+
